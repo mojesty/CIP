@@ -24,6 +24,7 @@ void step(data1d *in, data1d *out, double *z, int dt, reconstruct r) {
 	int i;
 	for (i=0;i<	in->x;i++) {
 		
+	}
 
 } 
 
