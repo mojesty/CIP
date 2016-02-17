@@ -20,8 +20,16 @@ double * R(double *w1, double *w2, double *zl, double *zr) {
 	return w;
 }
 
-void step(data1d *in, data1d *out, double *z, int dt, reconstruct r) {
+void step(data1d *in, data1d *out, double *z, const double dt, reconstruct r) {
 	int i;
+	double *w, *dw;
+	w=(double)malloc(6*sizeof(double));
+	dw=(double)malloc(6*sizeof(double));
+	double zl, zr;
+	/*
+	 * w= [w01, w12, w_11, w_12, w11, w12]
+	 * dw=[dw01, dw12, dw_11, dw_12, dw11, dw12]
+	 */
 	for (i=0;i<	in->x;i++) {
 		
 	}
