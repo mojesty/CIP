@@ -93,6 +93,25 @@ void init_data(data2d *d, int xmax, int ymax,  cell2d(*init)(int x, int y)) {
 		}
 	}
 }
-		
+
+void init_data(data1d *d, int xmax, cell1d (*init) (int x)) {
+	printf("Hello \n");
+	d->x=xmax;
+	int i;
+	d->data=(cell1d*)malloc(xmax*sizeof(cell1d));
+	for (i=0;i<xmax;i++) {
+		d->data[i]=(*init)(i);
+	}
+}		
+
+void save_data(char * path, data1d * d) {
+	FILE *f;
+	f=fopen (path, "w");
+	int i;
+	for (i=0;i<d->x;i++) {		
+		fprintf(f, "%f\t%f\n", d->data[i].u, d->data[i].vx);
+	}
+	fclose(f);
+}
 
 #endif //DATA_H

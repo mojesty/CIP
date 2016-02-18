@@ -3,6 +3,7 @@
 
 #include "data.h"
 #include <math.h>
+#include <stdio.h>
 
 //TODO: config-файл
 
@@ -40,6 +41,7 @@ cell2d rectangle(int x, int y) {
 }
 
 cell1d rectangle (int x) {
+	printf("Hello %d\n", x);
 	cell1d res;	
 	double xf=(double)(x)/(double)(XMAX);
 	res=nulls1d();
